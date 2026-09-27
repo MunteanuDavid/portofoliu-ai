@@ -1,0 +1,369 @@
+<!doctype html><html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portofoliu Campanii AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{
+  color-scheme: dark;
+  --ink:#0A0907;
+  --surface:#13110D;
+  --line:#2A251C;
+  --gold:#C9A45C;
+  --gold-soft:#8E7445;
+  --champagne:#EDE3D0;
+  --muted:#958A78;
+  --display:"Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --body:"Figtree", "Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ink);color:var(--champagne);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-inline:clamp(16px,4vw,56px);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:1240px;margin:0 auto}
+
+/* ---------- Portofoliu ---------- */
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin:0 0 20px}
+.portfolio{padding-block:clamp(72px,10vw,140px) clamp(64px,8vw,110px);position:relative}
+.portfolio::before{
+  content:"";position:absolute;inset:8% -10% 0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 50% 45% at 50% 58%, rgba(201,164,92,.13), transparent 70%);
+}
+.p-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(48px,6vw,80px);position:relative;z-index:1}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,4.6vw,60px);line-height:1.05;margin:0;text-wrap:balance}
+h2 em{font-style:italic;color:var(--gold)}
+.p-head p{margin:0;color:var(--muted);max-width:38ch}
+
+.stage{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,2.1fr) minmax(0,1.1fr);gap:clamp(20px,3vw,44px);align-items:end}
+figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:22px}
+figcaption{text-align:center;display:flex;flex-direction:column;gap:2px}
+figcaption b{font-family:var(--display);font-weight:400;font-size:20px;color:var(--champagne)}
+figcaption span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-soft)}
+
+/* ---------- Telefon ---------- */
+.phone{
+  width:100%;max-width:290px;aspect-ratio:9/19.3;border-radius:46px;padding:11px;
+  background:linear-gradient(145deg,#3a352c,#16140f 40%,#2b271f 70%,#0d0c09);
+  box-shadow:0 0 0 1px #4a4335, inset 0 0 0 1px rgba(255,255,255,.06), 0 40px 80px -20px rgba(0,0,0,.9), 0 0 60px -10px rgba(201,164,92,.18);
+  position:relative;
+}
+.screen{container-type:inline-size;position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#000;isolation:isolate}
+.island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:32%;height:22px;border-radius:14px;background:#000;z-index:20}
+.statusbar{position:absolute;top:0;left:0;right:0;height:44px;display:flex;justify-content:space-between;align-items:center;padding:4px 24px 0 28px;font-size:clamp(9px,4.5cqw,12px);font-weight:600;color:#fff;z-index:15;font-family:-apple-system,"SF Pro Text",var(--body)}
+.statusbar .sys{display:flex;gap:5px;align-items:center}
+.statusbar svg{display:block}
+
+/* Instagram */
+.ig{position:absolute;inset:0;background:#000;color:#f5f5f5;display:flex;flex-direction:column;padding-top:44px;font-family:-apple-system,"SF Pro Text",var(--body);font-size:clamp(8px,4.3cqw,11.5px);line-height:1.35}
+.ig-top{flex:0 0 auto;display:flex;justify-content:space-between;align-items:center;padding:6px 12px 8px}
+.ig-logo{font-family:"Bodoni Moda",serif;font-style:italic;font-size:1.65em;letter-spacing:-.01em}
+.ig-top .icons{display:flex;gap:14px}
+.ig-post-head{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:6px 10px}
+.avatar{width:26px;height:26px;border-radius:50%;padding:2px;background:conic-gradient(from 200deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5,#feda75)}
+.avatar i{display:block;width:100%;height:100%;border-radius:50%;background:#1a1712 radial-gradient(circle at 50% 45%,var(--gold) 0 28%,transparent 30%);border:2px solid #000}
+.ig-post-head .who{display:flex;flex-direction:column;line-height:1.15}
+.ig-post-head .who b{font-weight:600;font-size:1em}
+.ig-post-head .who small{font-size:.87em;color:#a8a8a8}
+.ig-post-head .more{margin-left:auto;letter-spacing:1px;font-weight:700}
+.carousel{flex:0 0 auto;position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;background:#0c0b09;cursor:grab;touch-action:pan-y}
+.track{display:flex;height:100%;transition:transform .7s cubic-bezier(.65,0,.25,1)}
+.track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
+.count{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.62);color:#fff;font-size:10.5px;padding:2px 8px;border-radius:12px}
+.ig-actions{flex:0 0 auto;display:flex;align-items:center;padding:9px 10px 4px;gap:13px}
+.ig-actions .dots{flex:1;display:flex;justify-content:center;gap:4px;margin-right:52px}
+.ig-actions .dots i{width:5px;height:5px;border-radius:50%;background:#555;transition:background .3s}
+.ig-actions .dots i.on{background:#3897f0}
+.heart{cursor:pointer;transition:transform .2s}
+.heart.liked path{fill:#ff3040;stroke:#ff3040}
+.heart.pop{transform:scale(1.25)}
+.ig-meta{padding:2px 10px;display:flex;flex-direction:column;gap:3px;flex:0 0 auto}
+.ig-meta > *{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ig-meta .muted{color:#a8a8a8}
+.big-heart{position:absolute;left:50%;top:50%;width:70px;height:70px;transform:translate(-50%,-50%) scale(0);opacity:0;pointer-events:none;transition:transform .35s cubic-bezier(.2,1.6,.4,1),opacity .35s}
+.big-heart.show{transform:translate(-50%,-50%) scale(1);opacity:1}
+.ig-nav{flex:0 0 auto;margin-top:auto;display:flex;justify-content:space-around;align-items:center;padding:10px 8px 22px;border-top:1px solid #1e1e1e}
+.ig-nav .me{width:20px;height:20px;border-radius:50%;background:#1a1712 radial-gradient(circle at 50% 45%,var(--gold) 0 28%,transparent 30%);border:1.5px solid #fff}
+
+/* TikTok */
+.tt{position:absolute;inset:0;color:#fff;font-family:-apple-system,"SF Pro Text",var(--body)}
+.tt video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,transparent 18%,transparent 58%,rgba(0,0,0,.6) 100%);pointer-events:none}
+.tt-top{position:absolute;top:44px;left:0;right:0;display:flex;justify-content:center;gap:16px;font-size:clamp(9px,4.8cqw,13px);font-weight:600;z-index:3}
+.tt-top span{opacity:.6}
+.tt-top .on{opacity:1;position:relative}
+.tt-top .on::after{content:"";position:absolute;left:30%;right:30%;bottom:-5px;height:2px;background:#fff;border-radius:2px}
+.tt-side{position:absolute;right:8px;bottom:92px;display:flex;flex-direction:column;align-items:center;gap:13px;z-index:3;font-size:10px;font-weight:600}
+.tt-side div{display:flex;flex-direction:column;align-items:center;gap:2px}
+.tt-side svg{filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+.tt-av{width:36px;height:36px;border-radius:50%;border:1.5px solid #fff;background:#1a1712 radial-gradient(circle at 50% 45%,var(--gold) 0 28%,transparent 30%);position:relative;margin-bottom:6px}
+.tt-av::after{content:"+";position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:16px;height:16px;border-radius:50%;background:#fe2c55;font-size:13px;line-height:16px;text-align:center;font-weight:700}
+.disc{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle,var(--gold) 0 22%,#222 24% 60%,#111 62%);border:5px solid #1b1b1b;animation:spin 5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tt-bottom{position:absolute;left:12px;right:58px;bottom:54px;z-index:3;font-size:clamp(8px,4.3cqw,11.5px);line-height:1.35;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.tt-bottom b{font-size:1.08em;display:block;margin-bottom:3px}
+.tt-bottom .music{margin-top:6px;display:flex;gap:5px;align-items:center;white-space:nowrap;overflow:hidden}
+.tt-nav{position:absolute;left:0;right:0;bottom:0;height:46px;background:#000;display:flex;justify-content:space-around;align-items:center;font-size:8.5px;z-index:4;padding-bottom:6px}
+.tt-nav div{display:flex;flex-direction:column;align-items:center;gap:1px;opacity:.75}
+.tt-nav .home{opacity:1}
+.tt-plus{width:34px;height:22px;border-radius:7px;background:linear-gradient(90deg,#25f4ee 0 12%,#fff 12% 88%,#fe2c55 88%);display:grid;place-items:center;color:#000;font-weight:700;font-size:16px;line-height:1}
+.progress{position:absolute;left:0;right:0;bottom:46px;height:2px;background:rgba(255,255,255,.25);z-index:4}
+.progress i{display:block;height:100%;width:0;background:#fff}
+.sound{position:absolute;top:78px;left:10px;z-index:5;border:0;border-radius:14px;padding:5px 10px;background:rgba(0,0,0,.5);color:#fff;font:600 10.5px/1 var(--body);display:flex;gap:5px;align-items:center;cursor:pointer;backdrop-filter:blur(6px)}
+.sound:focus-visible,.carousel:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ---------- Laptop ---------- */
+.laptop{width:100%;max-width:760px;margin-bottom:6px}
+.lid{
+  border-radius:18px 18px 4px 4px;padding:14px 14px 20px;
+  background:linear-gradient(180deg,#2c2820,#15130f);
+  box-shadow:0 0 0 1px #4a4335, inset 0 0 0 1px rgba(255,255,255,.05), 0 40px 90px -25px rgba(0,0,0,.95), 0 0 80px -20px rgba(201,164,92,.2);
+  position:relative;
+}
+.lid::before{content:"";position:absolute;top:5px;left:50%;width:5px;height:5px;border-radius:50%;background:#0a0a0a;box-shadow:0 0 0 1px #333;transform:translateX(-50%)}
+.display{border-radius:5px;overflow:hidden;background:#0b0a08;aspect-ratio:16/10.4;display:flex;flex-direction:column}
+.browser{display:flex;align-items:center;gap:10px;padding:7px 10px;background:#1d1b17;border-bottom:1px solid #000}
+.lights{display:flex;gap:5px}
+.lights i{width:8px;height:8px;border-radius:50%;background:#ff5f57}
+.lights i:nth-child(2){background:#febc2e}.lights i:nth-child(3){background:#28c840}
+.url{flex:1;max-width:52%;margin:0 auto;background:#2a2723;border-radius:6px;font-size:10.5px;color:#b9b0a1;text-align:center;padding:3px 10px;display:flex;justify-content:center;gap:5px;align-items:center;white-space:nowrap;overflow:hidden}
+.site{flex:1;position:relative;overflow:hidden;background:#0d0b09}
+.site-scroll{position:absolute;inset:0 0 auto 0;animation:siteScroll 16s ease-in-out infinite}
+.site-nav{display:flex;justify-content:space-between;align-items:center;padding:1.6% 4%;font-size:clamp(7px,.85vw,11px);letter-spacing:.18em;text-transform:uppercase;color:#d9ccb2;background:#0d0b09}
+.site-nav .brand{font-family:var(--display);letter-spacing:.3em;font-size:1.25em;color:#e3cf9f}
+.site-nav .links{display:flex;gap:2.2em}
+.site-hero{display:block;width:100%}
+.site-cta{position:absolute;left:8.3%;top:73%;font-size:clamp(6px,.8vw,10.5px);letter-spacing:.2em;text-transform:uppercase;color:#0d0b09;background:#d5b776;padding:.9em 1.8em;border-radius:1px}
+.hero-wrap{position:relative}
+.site-sec{background:#0d0b09;padding:4.5% 4% 6%}
+.site-sec-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3%;color:#d9ccb2}
+.site-sec-head b{font-family:var(--display);font-weight:400;font-size:clamp(10px,1.5vw,20px);color:#ecdcb6}
+.site-sec-head span{font-size:clamp(6px,.7vw,9px);letter-spacing:.2em;text-transform:uppercase;color:#9c8b6a}
+.site-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6%}
+.card{display:flex;flex-direction:column;gap:.5em;font-size:clamp(6px,.75vw,10px)}
+.card .ph{aspect-ratio:4/5;overflow:hidden;border:1px solid #2a251c;background:#15120e}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 6s ease}
+.card .nm{font-family:var(--display);font-size:1.35em;color:#ecdcb6;display:flex;justify-content:space-between}
+.card .nm em{font-style:normal;font-family:var(--body);font-size:.75em;color:#c9a45c;letter-spacing:.05em}
+.card small{color:#8d8170;letter-spacing:.14em;text-transform:uppercase;font-size:.72em}
+@keyframes siteScroll{0%,28%{transform:translateY(0)}50%,82%{transform:translateY(var(--shift,-40%))}100%{transform:translateY(0)}}
+.base{height:14px;margin:0 -7%;border-radius:0 0 16px 16px;background:linear-gradient(180deg,#3b362c,#1a1813 60%,#0b0a08);box-shadow:0 30px 40px -18px rgba(0,0,0,.9);position:relative}
+.base::before{content:"";position:absolute;left:50%;top:0;width:16%;height:5px;transform:translateX(-50%);border-radius:0 0 8px 8px;background:#12100c}
+
+/* ---------- Final ---------- */
+.note{margin-top:clamp(56px,7vw,90px);padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;color:var(--muted);font-size:14px;position:relative;z-index:1}
+.note b{color:var(--champagne);font-weight:500}
+
+/* ---------- Responsive ---------- */
+@container (max-width:250px){.ig-meta .muted{display:none}.ig-actions{padding-top:7px}}
+@container (max-width:215px){.ig-top{padding-bottom:4px}.ig-post-head{padding:4px 10px}}
+@media (max-width:980px){
+  .stage{grid-template-columns:1fr 1fr;row-gap:64px}
+  .stage .fig-laptop{grid-column:1 / -1;order:-1}
+}
+@media (max-width:560px){
+  .stage{grid-template-columns:1fr}
+  .phone{max-width:270px}
+  .site-nav .links{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .site-scroll,.disc{animation:none}
+  .track{transition:none}
+}
+</style></head><body>
+
+<div class="wrap">
+
+  <section class="portfolio" aria-labelledby="t-portofoliu">
+    <div class="p-head">
+      <div>
+        <p class="eyebrow">Portofoliu</p>
+        <h2 id="t-portofoliu">Cum arată <em>acolo unde contează</em></h2>
+      </div>
+      <p>Aceleași lucrări, văzute cum le vede clientul tău: în feed, pe site și pe TikTok.</p>
+    </div>
+
+    <div class="stage">
+
+      <!-- 1. Instagram -->
+      <figure>
+        <div class="phone">
+          <div class="screen">
+            <div class="island"></div>
+            <div class="statusbar"><span>9:41</span><span class="sys">
+              <svg width="16" height="10" viewBox="0 0 16 10" fill="#fff"><rect x="0" y="6" width="3" height="4" rx="1"/><rect x="4.3" y="4" width="3" height="6" rx="1"/><rect x="8.6" y="2" width="3" height="8" rx="1"/><rect x="12.9" y="0" width="3" height="10" rx="1"/></svg>
+              <svg width="22" height="11" viewBox="0 0 22 11" fill="none"><rect x=".5" y=".5" width="18" height="10" rx="3" stroke="#fff" opacity=".5"/><rect x="2" y="2" width="14" height="7" rx="1.6" fill="#fff"/><rect x="19.6" y="3.5" width="1.6" height="4" rx=".8" fill="#fff" opacity=".5"/></svg>
+            </span></div>
+            <div class="ig">
+              <div class="ig-top">
+                <span class="ig-logo">Instagram</span>
+                <span class="icons">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.5 4.5 7.2 4.5c2 0 3.5 1.1 4.8 2.9 1.3-1.8 2.8-2.9 4.8-2.9 3.7 0 5.8 3.9 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M21 12a9 9 0 1 1-3.6-7.2L21 3v5h-5"/></svg>
+                </span>
+              </div>
+              <div class="ig-post-head">
+                <span class="avatar"><i></i></span>
+                <span class="who"><b>brandul.tau</b><small>Sponsorizat</small></span>
+                <span class="more">···</span>
+              </div>
+              <div class="carousel" id="carousel" tabindex="0" aria-label="Postare Instagram cu două postere. Folosește săgețile pentru a schimba imaginea.">
+                <div class="track" id="track">
+                  <img src="assets/habeebat.jpg" style="object-position:50% 55%" alt="Poster de parfum: sticla Habeebat Qalbi pe un piedestal de marmură albă, sub o arcadă aurie">
+                  <img src="assets/opulent-musk-4x5.jpg" alt="Poster de parfum: sticla albă Opulent Musk pe un piedestal de marmură, într-o curte cu fântână la apus">
+                </div>
+                <span class="count" id="count">1/2</span>
+                <svg class="big-heart" id="bigHeart" viewBox="0 0 24 24"><path fill="#fff" d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.5 4.5 7.2 4.5c2 0 3.5 1.1 4.8 2.9 1.3-1.8 2.8-2.9 4.8-2.9 3.7 0 5.8 3.9 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg>
+              </div>
+              <div class="ig-actions">
+                <svg class="heart" id="heart" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" role="button" aria-label="Apreciază"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.5 4.5 7.2 4.5c2 0 3.5 1.1 4.8 2.9 1.3-1.8 2.8-2.9 4.8-2.9 3.7 0 5.8 3.9 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg>
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.4 7.6L3.5 20.5l1.3-4.4A8.5 8.5 0 1 1 20.5 11.6z"/></svg>
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M21.5 3 10.2 13.8M21.5 3l-7 18-4.3-7.2L3 9.6z"/></svg>
+                <span class="dots" id="dots"><i class="on"></i><i></i></span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M19 21l-7-5.5L5 21V3.5h14z"/></svg>
+              </div>
+              <div class="ig-meta">
+                <b id="likes">4.812 aprecieri</b>
+                <span><b>brandul.tau</b> Lumina potrivită. ✦</span>
+                <span class="muted">Vezi toate cele 186 comentarii</span>
+                <span class="muted" style="font-size:10px">acum 2 ore</span>
+              </div>
+              <div class="ig-nav">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 3 2.5 11h2.5v10h5.5v-6h3v6H19V11h2.5z"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="m10 8.5 5.5 3.5-5.5 3.5z" fill="#fff"/></svg>
+                <span class="me"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption><b>Postere de campanie</b><span>Instagram · carusel</span></figcaption>
+      </figure>
+
+      <!-- 2. Laptop -->
+      <figure class="fig-laptop">
+        <div class="laptop">
+          <div class="lid">
+            <div class="display">
+              <div class="browser">
+                <span class="lights"><i></i><i></i><i></i></span>
+                <span class="url"><svg width="9" height="10" viewBox="0 0 10 12" fill="#b9b0a1"><path d="M2 5V3.5a3 3 0 0 1 6 0V5h1v7H1V5zm1.5 0h3V3.5a1.5 1.5 0 0 0-3 0z"/></svg>brandultau.ro</span>
+                <span style="width:34px"></span>
+              </div>
+              <div class="site">
+                <div class="site-scroll">
+                  <div class="site-nav"><span class="brand">OBSESS</span><span class="links"><span>Parfumuri</span><span>Colecții</span><span>Cadouri</span></span><span>Coș (0)</span></div>
+                  <div class="hero-wrap">
+                    <img class="site-hero" src="assets/obsess-landing.jpg" alt="Banner de site cu trei parfumuri pe un piedestal de marmură și titlul OBSESS">
+                    <span class="site-cta">Descoperă colecția</span>
+                  </div>
+                  <div class="site-sec">
+                    <div class="site-sec-head"><b>Cele mai iubite</b><span>Vezi toate</span></div>
+                    <div class="site-row">
+                      <div class="card"><div class="ph"><img src="assets/habeebat.jpg" alt="" style="object-position:50% 24%"></div><div class="nm">Habeebat Qalbi<em>249 lei</em></div><small>Eau de Parfum · 100 ml</small></div>
+                      <div class="card"><div class="ph"><img src="assets/now-rouge.jpg" alt="" style="object-position:50% 62%"></div><div class="nm">Now Rouge<em>219 lei</em></div><small>Eau de Parfum · 100 ml</small></div>
+                      <div class="card"><div class="ph"><img src="assets/opulent-musk.jpg" alt="" style="object-position:50% 50%"></div><div class="nm">Opulent Musk<em>199 lei</em></div><small>Eau de Parfum · 100 ml</small></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="base"></div>
+        </div>
+        <figcaption><b>Landing page premium</b><span>Site · banner principal</span></figcaption>
+      </figure>
+
+      <!-- 3. TikTok -->
+      <figure>
+        <div class="phone">
+          <div class="screen">
+            <div class="island"></div>
+            <div class="statusbar"><span>9:41</span><span class="sys">
+              <svg width="16" height="10" viewBox="0 0 16 10" fill="#fff"><rect x="0" y="6" width="3" height="4" rx="1"/><rect x="4.3" y="4" width="3" height="6" rx="1"/><rect x="8.6" y="2" width="3" height="8" rx="1"/><rect x="12.9" y="0" width="3" height="10" rx="1"/></svg>
+              <svg width="22" height="11" viewBox="0 0 22 11" fill="none"><rect x=".5" y=".5" width="18" height="10" rx="3" stroke="#fff" opacity=".5"/><rect x="2" y="2" width="14" height="7" rx="1.6" fill="#fff"/><rect x="19.6" y="3.5" width="1.6" height="4" rx=".8" fill="#fff" opacity=".5"/></svg>
+            </span></div>
+            <div class="tt">
+              <video id="vid" src="assets/crema.mp4" poster="assets/crema-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Video: o femeie își aplică o cremă de față"></video>
+              <div class="tt-top"><span>Urmărești</span><span class="on">Pentru tine</span></div>
+              <button class="sound" id="sound" type="button" aria-pressed="false">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M4 9h4l5-4v14l-5-4H4z"/><path id="soundX" d="m16 9 5 6m0-6-5 6" stroke="#fff" stroke-width="2"/></svg><span id="soundLbl">Pornește sunetul</span>
+              </button>
+              <div class="tt-side">
+                <span class="tt-av"></span>
+                <div><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 21s-7.5-4.6-9.3-9.2C1.4 8.4 3.5 4.5 7.2 4.5c2 0 3.5 1.1 4.8 2.9 1.3-1.8 2.8-2.9 4.8-2.9 3.7 0 5.8 3.9 4.5 7.3C19.5 16.4 12 21 12 21z"/></svg>28,4K</div>
+                <div><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12 3C6.5 3 2 6.8 2 11.5c0 2.7 1.5 5.1 3.8 6.6L5 21.5l4-2.1c.9.2 2 .4 3 .4 5.5 0 10-3.8 10-8.4S17.5 3 12 3z"/></svg>412</div>
+                <div><svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M19 21l-7-5.5L5 21V3.5h14z"/></svg>1.920</div>
+                <div><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M13 4v4.5C6.5 9 3.5 13.5 3 19c2.2-3.2 5.3-4.6 10-4.6V19l8-7.5z"/></svg>Distribuie</div>
+                <span class="disc"></span>
+              </div>
+              <div class="tt-bottom">
+                <b>brandul.tau</b>
+                Rutina de dimineață, în 10 secunde ✨ #skincare #glowup
+                <div class="music"><svg width="11" height="11" viewBox="0 0 24 24" fill="#fff"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>sunet original · brandul.tau</div>
+              </div>
+              <div class="progress"><i id="prog"></i></div>
+              <div class="tt-nav">
+                <div class="home"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 3 2.5 11h2.5v10h5.5v-6h3v6H19V11h2.5z"/></svg>Acasă</div>
+                <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.7 3.4-5.5 6.5-5.5s5.7 1.8 6.5 5.5"/></svg>Prieteni</div>
+                <div><span class="tt-plus">+</span></div>
+                <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 5h16v11H9l-5 4z"/></svg>Inbox</div>
+                <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>Profil</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figcaption><b>Ambasador de brand</b><span>TikTok · video 10 secunde</span></figcaption>
+      </figure>
+
+    </div>
+
+    <div class="note">
+      <span>Toate vizualurile de mai sus sunt create cu AI, pornind de la o poză simplă a produsului.</span>
+      <span><b>Vrei să-ți vezi produsul așa?</b> Trimite-ne o poză și îți facem un exemplu gratuit.</span>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  // Carusel Instagram
+  var track=document.getElementById('track'),car=document.getElementById('carousel'),
+      dots=document.querySelectorAll('#dots i'),count=document.getElementById('count'),
+      n=track.children.length,i=0,timer;
+  function go(k){i=(k+n)%n;track.style.transform='translateX('+(-100*i)+'%)';
+    dots.forEach(function(d,j){d.classList.toggle('on',j===i)});count.textContent=(i+1)+'/'+n;}
+  function auto(){clearInterval(timer);timer=setInterval(function(){go(i+1)},3800);}
+  auto();
+  var sx=null;
+  car.addEventListener('pointerdown',function(e){sx=e.clientX});
+  car.addEventListener('pointerup',function(e){if(sx===null)return;var dx=e.clientX-sx;sx=null;
+    if(Math.abs(dx)>30){go(i+(dx<0?1:-1));auto();}});
+  car.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){go(i+1);auto()}if(e.key==='ArrowLeft'){go(i-1);auto()}});
+
+  // Like (click pe inimă sau dublu-click pe imagine)
+  var heart=document.getElementById('heart'),big=document.getElementById('bigHeart'),likes=document.getElementById('likes'),liked=false;
+  function setLike(v){liked=v;heart.classList.toggle('liked',v);likes.textContent=(v?'4.813':'4.812')+' aprecieri';
+    heart.classList.add('pop');setTimeout(function(){heart.classList.remove('pop')},200);}
+  heart.addEventListener('click',function(){setLike(!liked)});
+  car.addEventListener('dblclick',function(){setLike(true);big.classList.add('show');setTimeout(function(){big.classList.remove('show')},700);});
+
+  // Laptop: derulează exact până la finalul paginii
+  var site=document.querySelector('.site'),sc=document.querySelector('.site-scroll');
+  function fit(){var d=sc.scrollHeight-site.clientHeight;sc.style.setProperty('--shift',(d>0?-d:0)+'px');}
+  fit();window.addEventListener('resize',fit);window.addEventListener('load',fit);
+
+  // Video TikTok
+  var v=document.getElementById('vid'),btn=document.getElementById('sound'),lbl=document.getElementById('soundLbl'),
+      x=document.getElementById('soundX'),prog=document.getElementById('prog');
+  var p=v.play(); if(p&&p.catch)p.catch(function(){});
+  btn.addEventListener('click',function(){v.muted=!v.muted;if(!v.muted)v.play().catch(function(){});
+    btn.setAttribute('aria-pressed',String(!v.muted));lbl.textContent=v.muted?'Pornește sunetul':'Oprește sunetul';x.style.display=v.muted?'':'none';});
+  v.addEventListener('timeupdate',function(){if(v.duration)prog.style.width=(v.currentTime/v.duration*100)+'%';});
+})();
+</script>
+</body></html>
